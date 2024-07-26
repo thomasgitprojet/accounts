@@ -58,7 +58,7 @@ include 'includes/_functions.php';
                 <h2 class="my-0 fw-normal fs-4">Solde aujourd'hui</h2>
             </div>
             <div class="card-body">
-                <p class="card-title pricing-card-title text-center fs-1">625,34 €</p>
+                <?=getSumofMonth ($dbAccount)?>
             </div>
         </section>
 
@@ -76,7 +76,7 @@ include 'includes/_functions.php';
                         </tr>
                     </thead>
                     <tbody>                    
-                            <?=getTransaction($dbAccount);?>
+                            <?=getTransaction($dbAccount)?>
                      
                     </tbody>
                 </table>

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Undocumented function
+ * Get transactions of the month
  *
  * @param [type] $callObjet
  * @return void
@@ -43,5 +43,17 @@ function getTransaction($callObjet)
                                 </a>
                             </td>
                             </tr>';
+    }
+}
+
+function getSumofMonth ($callObjet) {
+
+    $query = $callObjet->prepare("SELECT SUM(amount) sum_
+    FROM `transaction`
+    WHERE DATE_FORMAT(date_transaction, '%Y-%m') = DATE_FORMAT(CURDATE(), '%Y-%m');");
+    $query->execute();
+
+    while ($transaction = $query->fetch()) {
+        echo '<p class="card-title pricing-card-title text-center fs-1">'.$transaction['sum_'].'</p>';
     }
 }
