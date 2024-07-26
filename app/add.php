@@ -1,3 +1,13 @@
+<?php 
+
+session_start();
+
+include 'includes/_database.php';
+include 'includes/_functions.php';
+
+generateToken();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,6 +21,7 @@
 </head>
 
 <body>
+
 
     <div class="container-fluid">
         <header class="row flex-wrap justify-content-between align-items-center p-3 mb-4 border-bottom">
@@ -51,7 +62,7 @@
                 <h1 class="my-0 fw-normal fs-4">Ajouter une opération</h1>
             </div>
             <div class="card-body">
-                <form>
+                <form id="" action="actions.php" method="post">
                     <div class="mb-3">
                         <label for="name" class="form-label">Nom de l'opération *</label>
                         <input type="text" class="form-control" name="name" id="name"
@@ -83,7 +94,8 @@
                         </select>
                     </div>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-primary btn-lg">Ajouter</button>
+                        <button type="submit" name="" action="add" class="btn btn-primary btn-lg">Ajouter</button>
+                        <input id='' type="hidden" name="token" value='<?= $_SESSION['token'] ?>'>
                     </div>
                 </form>
             </div>

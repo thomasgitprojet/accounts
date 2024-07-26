@@ -280,7 +280,11 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
-SELECT name, amount, category_name, icon_class, DATE_FORMAT(date_transaction, '%d-%m-%Y') 
-FROM `transaction`
-  JOIN category USING (id_category)
-WHERE DATE_FORMAT(date_transaction, '%Y-%m') = DATE_FORMAT (CURDATE(), '%Y-%m');
+-- SELECT name, amount, category_name, icon_class, DATE_FORMAT(date_transaction, '%d-%m-%Y') 
+-- FROM `transaction`
+--   JOIN category USING (id_category)
+-- WHERE DATE_FORMAT(date_transaction, '%Y-%m') = DATE_FORMAT (CURDATE(), '%Y-%m');
+
+
+
+
